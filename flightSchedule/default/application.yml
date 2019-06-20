@@ -1,14 +1,16 @@
 server:
-  port: 8083
+  port: 8086
 
 management:
   endpoints:
     web:
       exposure:
-        include: *
+        include: "*"
 spring:
+  application:
+    name: flightFare
   datasource:
-    url: jdbc:h2:mem:flight-schedule;DD_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:flight-fare
     platform: h2
     username: username
     password: password
@@ -25,7 +27,3 @@ spring:
     console:
       enabled: true
       path: /h2-console
-
-
-airline:
-  disabled:
